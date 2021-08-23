@@ -58,3 +58,11 @@ for id in data['id']:
 
 ```
 
+# Unchedule all Phantom with Zapier
+Replace 1111 by the API key
+```
+https://api.phantombuster.com/api/v2/agents/unschedule-all?key=1111
+```
+Select trigger "New Ouput in Phantombuster
+Add a stage "Filter by Zapier". In condition select "Exit Code" Greater than 0 (It means that an error ooccured with the Phantom)
+Add a stage "Webhook by Zapier". Pick "Get" as Action Event. Paste the code above as url.
