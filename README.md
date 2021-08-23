@@ -59,10 +59,17 @@ for id in data['id']:
 ```
 
 # Unchedule all Phantom with Zapier
-Replace 1111 by the API key
+Add your API_key.
 ```
-https://api.phantombuster.com/api/v2/agents/unschedule-all?key=1111
+#Parameter
+API_key = ""
+################
+
+import requests
+url = "https://api.phantombuster.com/api/v2/agents/unschedule-all"
+
+response = requests.request("POST", url, params={"key": API_key})
 ```
 Select trigger "New Ouput in Phantombuster
 Add a stage "Filter by Zapier". In condition select "Exit Code" Greater than 0 (It means that an error ooccured with the Phantom)
-Add a stage "Webhook by Zapier". Pick "Get" as Action Event. Paste the code above as url.
+Add a stage "Code by Zapier". Pick "Run Python" as Action Event. Paste the code above as code.
