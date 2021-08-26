@@ -1,6 +1,23 @@
 # Phantombuster_API_Tips
 Few useful use case of the [phantombuster](https://phantombuster.com?deal=fabian15) API
 
+# Unchedule all Phantom with Zapier
+Add your API_key.
+```
+#Parameter
+API_key = ""
+################
+
+import requests
+url = "https://api.phantombuster.com/api/v2/agents/unschedule-all"
+
+response = requests.request("POST", url, params={"key": API_key})
+```
+Select trigger "New Ouput in Phantombuster
+Add a stage "Filter by Zapier". In condition select "Exit Code" Greater than 0 (It means that an error ooccured with the Phantom)
+Add a stage "Code by Zapier". Pick "Run Python" as Action Event. Paste the code above as code.
+
+
 # Update multiple cookies at once
 Python code to update all linkedin cookies at once. Edit API_key and newCookie
 ```
@@ -58,18 +75,3 @@ for id in data['id']:
 
 ```
 
-# Unchedule all Phantom with Zapier
-Add your API_key.
-```
-#Parameter
-API_key = ""
-################
-
-import requests
-url = "https://api.phantombuster.com/api/v2/agents/unschedule-all"
-
-response = requests.request("POST", url, params={"key": API_key})
-```
-Select trigger "New Ouput in Phantombuster
-Add a stage "Filter by Zapier". In condition select "Exit Code" Greater than 0 (It means that an error ooccured with the Phantom)
-Add a stage "Code by Zapier". Pick "Run Python" as Action Event. Paste the code above as code.
