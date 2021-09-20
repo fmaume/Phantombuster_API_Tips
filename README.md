@@ -1,5 +1,5 @@
 # Phantombuster_API_Tips
-Few useful use case of the [phantombuster](https://phantombuster.com?deal=fabian15) API
+Few useful use case of the [phantombuster](https://phantombuster.com/?referral=fmc-f8VgvF4) API
 
 # Unchedule all Phantom with Zapier
 Add your API_key.
